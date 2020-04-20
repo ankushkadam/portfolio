@@ -330,7 +330,8 @@ header.sticky .navbar-nav li a:after{
 	color: #000;
 }
 .buttons a:before,
-#hire a:before{
+#hire a:before,
+button:before{
 	content: "";
 	position: absolute;
 	height: 100%;
@@ -346,7 +347,8 @@ header.sticky .navbar-nav li a:after{
  	transition: all 0.5s linear 0s;
 }
 .buttons a:hover:before,
-#hire a:hover:before{
+#hire a:hover:before,
+button:hover:before{
 	width: 100%;
 	left: 0px;
 	background: transparent;
