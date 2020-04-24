@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>animation morphing</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=1">
+		<style>
+			*{margin:0;padding:0;box-sizing:border-box;}
+			body{background:url(image/header1.jpg) no-repeat center center; height: 100vh; background-size: cover; font-family: sans-serif; background-blend-mode: luminosity;}
+			.logo{position:fixed; top:36px; left:30px; }
+			.logo h2{font-size: 32px; color:#000;}
+			.menu-toggle{display:block; height:50px; width:50px; background:#00f3ff; position:fixed; top:30px; right:30px; 
+				border-radius:50%; border:none; outline:none; z-index:2; }
+			.menu-toggle span{display:inline-block; vertical-align:middle; background:rgba(70,70,70); height:3px; width:27px; 		position:relative; transition:300ms ease-in-out 0s; }
+			.menu-toggle span:after,
+			.menu-toggle span:before{
+				content:"";
+				position:absolute;
+				width:27px;
+				height:3px;
+				background:rgba(70,70,70);
+				display:block;
+				transform:rotate(0deg);
+				transition:300ms ease-in-out 0s;
+			}
+			.menu-toggle span:after{bottom:-7px; }
+			.menu-toggle span:before{ top:-7px; }
+			.open .menu-toggle span{ background:rgba(70,70,70,0); }
+			.open .menu-toggle span:after{ bottom:0px; transform:rotate(45deg); }
+			.open .menu-toggle span:before{ top:0px; transform:rotate(-45deg); }
+			.morphing-circle{
+				height:40px;
+				width:40px;
+				border-radius:50%;
+				background:transparent;
+				position:fixed;
+				right:35px;
+				top:35px;
+				z-index:-1;
+				box-shadow:0px 0px 0px 0px #f74cf2;
+				transition:400ms ease-in-out 0s;
+			}
+			.open .morphing-circle{ box-shadow:0px 0px 0px 150vmax #00f3ff; }
+			.navigation{
+				position:fixed;
+				width:100%;
+				height:100vh;
+				display:flex;
+				justify-content:center;
+				align-items:center;
+				visibility:hidden;
+			}
+			.open .navigation{visibility:visible; }
+			nav ul{ list-style-type:none; }
+			nav ul li{ 
+				margin:10px 0;
+				/*transform:translate3d(-30px,10px,0px) skew(-20deg 0deg);*/
+				transition:50ms ease-in-out 0s;
+				opacity:0;
+			}
+			nav ul li a{
+				text-decoration:none;
+				color:#fff;
+				font-size:48px;
+				font-weight:700;
+				letter-spacing:2px;
+				filter:blur(0px);
+			}
+			nav ul:hover li a{opacity:0.6; filter:blur(2px); }
+			nav ul li:hover a{opacity:1; filter:blur(0px); }
+			.open nav ul li{
+				transform:translate3d(0px,0px,0px) skew(0deg 0deg);
+				transition-duration:400ms;
+				opacity:1;
+			}
+			.open nav ul li:nth-child(1){ transition-delay: 0.2s; }
+			.open nav ul li:nth-child(2){ transition-delay: 0.4s; }
+			.open nav ul li:nth-child(3){ transition-delay: 0.6s; }
+			.open nav ul li:nth-child(4){ transition-delay: 0.8s; }
+			</style>
+		</head>
+	<body>
+		<div class="logo"> 
+			<h2>Logo</h2>
+		</div>
+		<button class="menu-toggle">
+			<span></span>
+		</button>
+		<div class="morphing-circle">
+		</div>
+		<div class="navigation">
+			<nav>
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Services</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</nav>
+		<div>
+		<script src="../js/jquery-3.4.1.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$('.menu-toggle').click(function(){
+					$('body').toggleClass('open');
+				});
+			});
+		</script>
+	</body>
+</html>
