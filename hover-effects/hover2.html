@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hover 2</title>
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<style type="text/css">
+		body{
+			display: flex;
+			height: 100vh;
+			justify-content: center;
+			align-items: center;
+			background: #ddd;
+		}
+		.social-icon-wrapper ul{
+			display: flex;
+		}
+		.social-icon-wrapper ul li{
+			list-style-type: none;
+			height: 150px;
+			width: 150px;
+			margin: 0 20px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			border-radius: 50%;
+		}
+		.social-icon-wrapper ul li:before,
+		.social-icon-wrapper ul li:after
+		{
+			position: absolute;
+			content: "";
+			height: inherit;
+			width: inherit;
+			border-radius: 50%;
+			opacity: 0;
+		}
+		.social-icon-wrapper ul li:nth-child(1) a{color:#3b5998; }
+		.social-icon-wrapper ul li:nth-child(1){border:2px solid #3b5998; }
+		.social-icon-wrapper ul li:nth-child(1):before{background: #3b5998;}
+		.social-icon-wrapper ul li:nth-child(1):after{border: 1px dashed #3b5998;}
+
+		.social-icon-wrapper ul li:nth-child(2) a{color:#55acee; }
+		.social-icon-wrapper ul li:nth-child(2){border:2px solid #55acee; }
+		.social-icon-wrapper ul li:nth-child(2):before{background: #55acee;}
+		.social-icon-wrapper ul li:nth-child(2):after{border: 1px dashed #55acee;}
+
+		.social-icon-wrapper ul li:nth-child(3) a{color:#dc2743; }
+		.social-icon-wrapper ul li:nth-child(3){border:2px solid #dc2743 ; }
+		.social-icon-wrapper ul li:nth-child(3):before{background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);}
+		.social-icon-wrapper ul li:nth-child(3):after{border: 1px dashed #dc2743 ;}
+
+		.social-icon-wrapper ul li:nth-child(4) a{color:#0077b5; }
+		.social-icon-wrapper ul li:nth-child(4){border:2px solid #0077b5; }
+		.social-icon-wrapper ul li:nth-child(4):before{background: #0077b5;}
+		.social-icon-wrapper ul li:nth-child(4):after{border: 1px dashed #0077b5;}
+
+		.social-icon-wrapper ul li:hover:before{
+			transform: scale(0.8);
+			opacity: 1;
+		}
+		.social-icon-wrapper ul li:hover:after{
+			animation: rotate 10s linear infinite;
+			opacity: 1;
+		}
+		.social-icon-wrapper ul li:hover a{color: #fff; z-index: 1;}
+		.social-icon-wrapper ul li a{text-decoration: none;}
+		.social-icon-wrapper ul li i{font-size: 30px;}
+
+
+		@keyframes rotate{
+			from{transform:rotate(0deg) scale(0.88);}
+			to{transform:rotate(360deg) scale(0.88);}
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="social-icon-wrapper">
+		<ul>
+			<li><a href="#!"><i class="icon-facebook" aria-hidden="true"></i></a></li>
+			<li><a href="#!"><i class="icon-twitter" aria-hidden="true"></i></a></li>
+			<li><a href="#!"><i class="icon-instagram" aria-hidden="true"></i></a></li>
+			<li><a href="#!"><i class="icon-linkedin" aria-hidden="true"></i></a></li>
+		</ul>
+	</div>
+</body>
+</html>
