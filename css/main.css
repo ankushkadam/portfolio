@@ -408,6 +408,7 @@ header.sticky .navbar-nav li a:after{
 	height: 60px;
 	border-color: #000;
 }
+
 /*skill section*/
 #skill{
 	background: #f7f7f7;
@@ -450,6 +451,23 @@ h1:after{
     border-left: 12px solid transparent;
     border-right: 12px solid transparent;
 }
+.additional-skill-wrapper{
+	margin-top: 50px;
+}
+.additional-skill-wrapper h5:after{
+	content: "";
+	position: absolute;
+	width: 75px;
+	height: 2px;
+	bottom: -15px;
+	left: 0;
+	background:#000;
+}
+.additional-skill-wrapper .additional-skill{
+	margin-top: 30px;
+	padding-left: 15px;
+}
+
 /*Hire*/
 #hire{
 	padding: 100px 0px;
